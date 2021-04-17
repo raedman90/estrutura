@@ -15,35 +15,35 @@ int linhaB = 3, colunaB = 2;
 int tamanhoMatriz1 = 6;
 int tamanhoMatriz2 = 6;
 
-void AdicionarMatriz1( float mat1[tamanhoMatriz1] ) {
+void AdicionarMatriz1( int mat1[tamanhoMatriz1] ) {
         printf("\nPreenchendo a matriz [A] %d - %d\n\n",linhaA,colunaA);
         int l,c;
         for( l = 0; l < linhaA; l++ ) {
             for( c = 0; c < colunaA; c++ ) {
                 int k = l*colunaA + c;
                 printf("Linha: %d - Coluna: %d:",l,c);
-                scanf("%f", &mat1[k]);
+                scanf("%d", &mat1[k]);
             }
             printf("\n");
         }
 }
-void AdicionarMatriz2( float mat2[tamanhoMatriz2] ) {
+void AdicionarMatriz2( int mat2[tamanhoMatriz2] ) {
         printf("\nPreenchendo a matriz [B] %d - %d\n\n",linhaB,colunaB);
         int l,c;
         for(l = 0; l < linhaB; l++ ) {
             for( c = 0; c < colunaB; c++ ) {
                 int k = l*colunaB + c;
                 printf("Linha: %d - Coluna: %d:",l,c);
-                scanf("%f",&mat2[k]);
+                scanf("%d",&mat2[k]);
             }      
             printf("\n");
         }
 }
-void produtoMatrizes( float mat1[tamanhoMatriz1], float mat2[tamanhoMatriz2] ) {
+void produtoMatrizes( int mat1[tamanhoMatriz1], int mat2[tamanhoMatriz2] ) {
         int lA = 0, lB = 0;
         int cA, cB = 0;
         int posA = 0, posB = 0;
-        float soma = 0;        
+        int soma = 0;        
         
         for( cA = 0; cA < tamanhoMatriz1/2; cA++ ) { 
             posA = lA*colunaA + cA; 
@@ -52,7 +52,7 @@ void produtoMatrizes( float mat1[tamanhoMatriz1], float mat2[tamanhoMatriz2] ) {
             lB = lB + 1; 
         }
 
-        printf("%.2f ", soma);
+        printf("%d ", soma);
         lA = 0;
         lB = 0; 
         cB = 1;
@@ -65,7 +65,7 @@ void produtoMatrizes( float mat1[tamanhoMatriz1], float mat2[tamanhoMatriz2] ) {
             lB = lB + 1;
         }
 
-        printf("%.2f \n", soma);
+        printf("%d \n", soma);
         lA = 1;
         lB = 0; 
         cB = 0;
@@ -78,7 +78,7 @@ void produtoMatrizes( float mat1[tamanhoMatriz1], float mat2[tamanhoMatriz2] ) {
             lB = lB + 1;
         }
 
-        printf("%.2f ", soma);
+        printf("%d ", soma);
         lA = 1;
         lB = 0; 
         cB = 1;
@@ -90,7 +90,7 @@ void produtoMatrizes( float mat1[tamanhoMatriz1], float mat2[tamanhoMatriz2] ) {
             soma = soma + (mat1[posA])*(mat2[posB]);
             lB = lB + 1;
         }
-        printf("%.2f \n", soma);
+        printf("%d \n", soma);
 
 }
 int main (void) {
@@ -98,8 +98,8 @@ int main (void) {
         tamanhoMatriz1 = linhaA*colunaA;
         tamanhoMatriz2 = linhaB*colunaB;
         
-        float mat1[tamanhoMatriz1];
-        float mat2[tamanhoMatriz2];
+        int mat1[tamanhoMatriz1];
+        int mat2[tamanhoMatriz2];
         
         AdicionarMatriz1(mat1);
         AdicionarMatriz2(mat2);
