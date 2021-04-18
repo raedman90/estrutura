@@ -29,7 +29,7 @@ sequência (m=5) 2 3 2 1 0 é impossível.*/
 
 const int TRUE = 1;
 const int FALSE = 0;
-
+//Verificando entrada
 int entradaCity(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int linha) 
 {
     int k, cont = 0;
@@ -46,7 +46,7 @@ int entradaCity(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int linha)
     }
     return cont;
 }
-
+//Verificando saida
 int saidaCity(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int coluna) 
 {
     int k, cont = 0;
@@ -63,7 +63,7 @@ int saidaCity(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int coluna)
     }
     return cont;
 }
-
+//Verificando se as cidades possuem saidas para outra
 void saidaUn(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int coluna) 
 {
     int k, cont = 0;
@@ -83,7 +83,7 @@ void saidaUn(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int coluna)
         }
     }
 }
-
+//Fazendo caminho para a cidade
 int entSaiVet(int tamanho, int tamanhoVet, int matriz[tamanhoVet], int tam, int vet[tam]) 
 {
 	int k, x, cont = 0;
