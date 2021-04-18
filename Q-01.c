@@ -9,12 +9,14 @@
 //Francisco Israel Oliveira
 //Vinícius da Silva Ribeiro
 
-int linhaA = 2, colunaA = 3;
-int linhaB = 3, colunaB = 2;
+//Determinar o tamanho da matriz [A] [B]
+int linhaA = 3, colunaA = 2;
+int linhaB = 2, colunaB = 3;
 
 int tamanhoMatriz1 = 6;
 int tamanhoMatriz2 = 6;
 
+//Adicionando valores a matriz [A]
 void AdicionarMatriz1( int mat1[tamanhoMatriz1] ) {
         printf("\nPreenchendo a matriz [A] %d - %d\n\n",linhaA,colunaA);
         int l,c;
@@ -27,6 +29,7 @@ void AdicionarMatriz1( int mat1[tamanhoMatriz1] ) {
             printf("\n");
         }
 }
+//Adicionando valores a matriz [B]
 void AdicionarMatriz2( int mat2[tamanhoMatriz2] ) {
         printf("\nPreenchendo a matriz [B] %d - %d\n\n",linhaB,colunaB);
         int l,c;
@@ -39,6 +42,7 @@ void AdicionarMatriz2( int mat2[tamanhoMatriz2] ) {
             printf("\n");
         }
 }
+//Calculando produto das matrizes [A] E [B]
 void produtoMatrizes( int mat1[tamanhoMatriz1], int mat2[tamanhoMatriz2] ) {
         int lA = 0, lB = 0;
         int cA, cB = 0;

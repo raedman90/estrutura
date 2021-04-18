@@ -5,15 +5,16 @@
 //números INT, faça a soma das duas e imprima a matriz Transposta da matriz
 //soma. (3,0 Pontos)
 
-
 // ======= EQUIPE ======= //
 //Moacir David de Almeida Gonçalves
 //Francisco Israel Oliveira
 //Vinícius da Silva Ribeiro
 
+//Determinar o tamanho da matriz quadrada
 int linha = 3, coluna = 3;
 
 int tamanhoMatriz = 0;
+
 // Calculando matriz transposta (questao 2)
 void matrizTransposta(int mat3[tamanhoMatriz]) {
 	int i,j;
@@ -27,6 +28,7 @@ void matrizTransposta(int mat3[tamanhoMatriz]) {
 	}
 }
 
+//Imprime a matriz [A]
 void imprimirA(int mat1[tamanhoMatriz]) {
 	int i,j;
 	printf("\n Imprimindo a Matriz [A]: \n\n");
@@ -38,6 +40,8 @@ void imprimirA(int mat1[tamanhoMatriz]) {
 		printf("\n");
 	}
 }
+
+//"Zera" a matriz [C]
 void zerar(int mat3[tamanhoMatriz]) {
 	int k;
 	for(k=0;k<tamanhoMatriz;k++) {
@@ -45,6 +49,7 @@ void zerar(int mat3[tamanhoMatriz]) {
 	}
 }
 
+//Imprime a matriz [B]
 void imprimirB(int mat2[tamanhoMatriz]) {
 	int i,j;
 	printf("\n Imprimindo a Matriz [B]: \n\n");
@@ -56,9 +61,10 @@ void imprimirB(int mat2[tamanhoMatriz]) {
 		printf("\n");
 	}
 }
+
+//Imprime a matriz [C]
 void imprimirC(int mat3[tamanhoMatriz]) {
 	int i,j;
-	printf("\n Imprimindo a Matriz [C]: \n\n");
 	for(i=0;i<linha;i++) {
 		for(j=0;j<coluna;j++) {
 			int k = i*coluna + j;
@@ -68,19 +74,22 @@ void imprimirC(int mat3[tamanhoMatriz]) {
 	}
 }
 
+//Soma a matriz A com a B
 void somaMatriz(int mat1[tamanhoMatriz], int mat2[tamanhoMatriz], int mat3[tamanhoMatriz]){
     int i, j, k;
-	 printf("\n Somando a matriz [A] + Matriz [B]\n\n");
+	 printf("\n Somando a matriz [A] + Matriz [B]:\n\n");
     for(i=0; i<linha; i++){
         for(j=0; j<coluna; j++){
             k = i * coluna + j;
-            mat3[k] = mat1[k] + mat2[k];
-        }
+            mat3[k] = mat1[k] + mat2[k];            
+        }        
     }
+    imprimirC(mat3);
 }
+
 //Adicionando valores a Matriz [A]
 void AdicionarMatriz1( int mat1[tamanhoMatriz] ) {
-        printf("\nPreenchendo a matriz [A] %d - %d\n\n",linha,coluna);
+        printf("\nPreenchendo a matriz [A] %dx%d\n\n",linha,coluna);
         int l,c;
         for( l = 0; l < linha; l++ ) {
             for( c = 0; c < coluna; c++ ) {
@@ -91,9 +100,10 @@ void AdicionarMatriz1( int mat1[tamanhoMatriz] ) {
             printf("\n");
         }
 }
+
 //Adicionando valores a Matriz [B]
 void AdicionarMatriz2( int mat2[tamanhoMatriz] ) {
-        printf("\nPreenchendo a matriz [B] %d - %d\n\n",linha,coluna);
+        printf("\nPreenchendo a matriz [B] %dx%d\n\n",linha,coluna);
         int l,c;
         for(l = 0; l < linha; l++ ) {
             for( c = 0; c < coluna; c++ ) {
@@ -104,13 +114,15 @@ void AdicionarMatriz2( int mat2[tamanhoMatriz] ) {
             printf("\n");
         }
 }
+
+//Menu de opções depois de ter informado as matrizes [A] e [B]
 void menu(int opcao, int mat1[tamanhoMatriz], int mat2[tamanhoMatriz],int mat3[tamanhoMatriz]) 
 {
 	switch(opcao) 
 	{
 		case 1: 
 		{
-			system("cls"); //limpa a tela.
+			system("cls");
 			somaMatriz(mat1, mat2, mat3);
 			system("pause\n\n");
 			break;
@@ -128,15 +140,8 @@ void menu(int opcao, int mat1[tamanhoMatriz], int mat2[tamanhoMatriz],int mat3[t
 			imprimirB(mat2);
 			system("pause\n\n");
 			break;
-		}
-		case 4: 
-		{
-			system("cls");
-			imprimirC(mat3);
-			system("pause\n\n");
-			break;
-		}
-		case 5: {
+		}		
+		case 4: {
 			system("cls");
 			matrizTransposta(mat3);
 			system("pause\n\n");
@@ -166,11 +171,10 @@ main() {
 	{	
 		system("cls");
 		printf("//====== INSIRA O NUMERO DA OPCAO DESEJADA ======//\n\n");
-		printf("1. Somar Matriz [A] com Matriz [B]\n\n");
+		printf("1. Imprimir a soma da Matriz [A] com Matriz [B]\n\n");
 		printf("2. Imprimir Matriz [A]\n\n");
 		printf("3. Imprimir Matriz [B]\n\n");
-		printf("4. Imprimir Matriz [C]\n\n");
-		printf("5. Exibit Matriz Transposta [C]\n\n");
+		printf("4. Exibit a transposta da matriz soma\n\n");
 		printf("\n0. Sair\n\n");
 		printf("OPCAO DESEJADA: ");
 
